@@ -4,17 +4,33 @@ import axios from "axios";
 function App() {
   const [story, setStory] = useState("");
   const [completion, setCompletion] = useState("");
+  const [error, setError] = useState("");
 
   const handleGenerateStory = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/complete-story",
-        { story }
+        "https://api.openai.com/v1/engines/davinci-codex/completions",
+        {
+          prompt: story,
+          max_tokens: 100,
+          temperature: 0.6,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer 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", // Replace with your OpenAI API key
+          },
+        }
       );
-      const { completion } = response.data;
+
+      const completion = response.data.choices[0].text.trim();
       setCompletion(completion);
+      setError("");
     } catch (error) {
       console.error("Error generating the story:", error);
+      setCompletion("");
+      setError("An error occurred while generating the story.");
     }
   };
 
@@ -33,6 +49,11 @@ function App() {
         <div>
           <h2>Completed Story:</h2>
           <p>{completion}</p>
+        </div>
+      )}
+      {error && (
+        <div>
+          <p>Error: {error}</p>
         </div>
       )}
     </div>
