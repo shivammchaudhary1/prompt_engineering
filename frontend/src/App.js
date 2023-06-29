@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -8,19 +7,9 @@ function App() {
   const [error, setError] = useState("");
 
   const handleGenerateStory = async () => {
-    try {
-      const response = await axios.post("http://localhost:4500/", {
-        prompt: story,
-      });
-
-      const generatedStory = response.data.completion;
-      setCompletion(generatedStory);
-      setError("");
-    } catch (error) {
-      console.error("Error generating the story:", error);
-      setCompletion("");
-      setError("An error occurred while generating the story.");
-    }
+    console.log(
+      `I Wanna Create a story of about 400-700 words for a 5 year to 12 years children .The Initial Story lines are "${story}" , Please Complete my Story as per your understanding.`
+    );
   };
 
   return (
