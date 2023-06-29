@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [story, setStory] = useState("");
+  const [completion, setCompletion] = useState("");
+
+  const handleGenerateStory = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/complete-story",
+        { story }
+      );
+      const { completion } = response.data;
+      setCompletion(completion);
+    } catch (error) {
+      console.error("Error generating the story:", error);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Story Generator</h1>
+      <div>
+        <textarea
+          placeholder="Enter the initial story..."
+          value={story}
+          onChange={(e) => setStory(e.target.value)}
+        ></textarea>
+      </div>
+      <button onClick={handleGenerateStory}>Generate</button>
+      {completion && (
+        <div>
+          <h2>Completed Story:</h2>
+          <p>{completion}</p>
+        </div>
+      )}
     </div>
   );
 }
