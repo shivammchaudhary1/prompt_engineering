@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [story, setStory] = useState("");
@@ -37,6 +38,7 @@ function App() {
   return (
     <div className="App">
       <h1>Story Generator</h1>
+      <h2>I can Complete Your Story</h2>
       <div>
         <textarea
           placeholder="Enter the initial story..."
