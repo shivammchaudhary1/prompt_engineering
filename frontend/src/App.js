@@ -9,24 +9,12 @@ function App() {
 
   const handleGenerateStory = async () => {
     try {
-      const response = await axios.post(
-        "https://api.openai.com/v1/engines/davinci-codex/completions",
-        {
-          prompt: story,
-          max_tokens: 100,
-          temperature: 0.6,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer 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", // Replace with your OpenAI API key
-          },
-        }
-      );
+      const response = await axios.post("http://localhost:4500/", {
+        prompt: story,
+      });
 
-      const completion = response.data.choices[0].text.trim();
-      setCompletion(completion);
+      const generatedStory = response.data.completion;
+      setCompletion(generatedStory);
       setError("");
     } catch (error) {
       console.error("Error generating the story:", error);
