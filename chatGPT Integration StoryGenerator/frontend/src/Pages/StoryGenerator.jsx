@@ -51,9 +51,7 @@ const StoryGenerator = () => {
           <Heading mb={8} color="purple.500">
             Story Generator
           </Heading>
-          <Heading as="h5" color="purple.500">
-            I can complete your story
-          </Heading>
+          <Text color="purple.500">I can complete your story</Text>
           <Grid templateColumns="1fr" gap={4}>
             <GridItem>
               <Textarea

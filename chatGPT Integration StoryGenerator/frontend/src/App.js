@@ -1,5 +1,4 @@
 import "./App.css";
-// import QuoteGenerator from "./Pages/StoryGenerator";
 import StoryGenerator from "./Pages/StoryGenerator";
 
 function App() {
