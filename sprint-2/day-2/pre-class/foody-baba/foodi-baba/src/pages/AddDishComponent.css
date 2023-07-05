@@ -1,0 +1,18 @@
+.add-dish-container {
+  margin-bottom: 20px;
+}
+
+.add-dish-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-dish-container label {
+  margin-bottom: 10px;
+}
+
+.add-dish-container input[type="text"],
+.add-dish-container input[type="number"],
+.add-dish-container input[type="checkbox"] {
+  margin-left: 10px;
+}
