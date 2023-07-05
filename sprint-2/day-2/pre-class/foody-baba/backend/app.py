@@ -35,13 +35,6 @@ def create_dish():
     return jsonify(new_dish), 201
 
 
-# @app.route('/api/dishes/<int:dish_id>', methods=['GET'])
-# def get_dish(dish_id):
-#     dish = menu.get(dish_id)
-#     if dish:
-#         return jsonify(dish)
-#     else:
-#         return jsonify({'error': 'Dish not found'}), 404
     
 @app.route('/api/dishes/<int:dish_id>', methods=['GET'])
 def get_dish(dish_id):
