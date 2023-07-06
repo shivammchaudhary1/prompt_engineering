@@ -11,7 +11,7 @@ menu = [
         'description': 'Delicious pasta with a choice of sauces.',
         'ingredients': ['Pasta', 'Sauce', 'Herbs'],
         'discounts': None,
-        'image_url': 'https://example.com/pasta.jpg',
+        'image_url': 'https://images.pexels.com/photos/6382782/pexels-photo-6382782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -24,7 +24,7 @@ menu = [
         'description': 'Classic burger with a juicy patty and fresh toppings.',
         'ingredients': ['Bun', 'Beef Patty', 'Lettuce', 'Tomato'],
         'discounts': '10% off on weekdays',
-        'image_url': 'https://example.com/burger.jpg',
+        'image_url': 'https://images.pexels.com/photos/10831651/pexels-photo-10831651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -37,7 +37,7 @@ menu = [
         'description': 'Authentic Italian pizza with a variety of toppings.',
         'ingredients': ['Dough', 'Tomato Sauce', 'Cheese', 'Toppings'],
         'discounts': None,
-        'image_url': 'https://example.com/pizza.jpg',
+        'image_url': 'https://images.pexels.com/photos/11111603/pexels-photo-11111603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -50,7 +50,7 @@ menu = [
         'description': 'Tender steak cooked to perfection.',
         'ingredients': ['Beef Steak', 'Seasonings', 'Butter'],
         'discounts': None,
-        'image_url': 'https://example.com/steak.jpg',
+        'image_url': 'https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -63,7 +63,7 @@ menu = [
         'description': 'Fresh and healthy salad with a variety of greens.',
         'ingredients': ['Lettuce', 'Tomato', 'Cucumber', 'Dressing'],
         'discounts': None,
-        'image_url': 'https://example.com/salad.jpg',
+        'image_url': 'https://images.pexels.com/photos/14571140/pexels-photo-14571140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -76,7 +76,7 @@ menu = [
         'description': 'Traditional Japanese sushi rolls with fresh ingredients.',
         'ingredients': ['Sushi Rice', 'Nori', 'Fish', 'Vegetables'],
         'discounts': '20% off for a limited time',
-        'image_url': 'https://example.com/sushi.jpg',
+        'image_url': 'https://images.pexels.com/photos/7243421/pexels-photo-7243421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -89,7 +89,7 @@ menu = [
         'description': 'Warm and comforting soup for a delightful start.',
         'ingredients': ['Broth', 'Vegetables', 'Herbs', 'Spices'],
         'discounts': None,
-        'image_url': 'https://example.com/soup.jpg',
+        'image_url': 'https://images.pexels.com/photos/4062274/pexels-photo-4062274.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -102,7 +102,7 @@ menu = [
         'description': 'Crispy fish and chips with tartar sauce.',
         'ingredients': ['Fish Fillet', 'Potatoes', 'Batter', 'Tartar Sauce'],
         'discounts': '15% off on weekends',
-        'image_url': 'https://example.com/fish_chips.jpg',
+        'image_url': 'https://images.pexels.com/photos/8696562/pexels-photo-8696562.jpeg',
         'reviews': []
     },
     {
@@ -115,7 +115,7 @@ menu = [
         'description': 'Flavorful chicken curry with aromatic spices.',
         'ingredients': ['Chicken', 'Onions', 'Tomatoes', 'Spices'],
         'discounts': None,
-        'image_url': 'https://example.com/chicken_curry.jpg',
+        'image_url': 'https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -128,7 +128,7 @@ menu = [
         'description': 'Authentic Mexican tacos with a choice of fillings.',
         'ingredients': ['Tortillas', 'Meat', 'Salsa', 'Guacamole'],
         'discounts': None,
-        'image_url': 'https://example.com/tacos.jpg',
+        'image_url': 'https://images.pexels.com/photos/16694957/pexels-photo-16694957/free-photo-of-frying-shrimp-po-boy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -141,7 +141,7 @@ menu = [
         'description': 'Layers of pasta, meat, and cheese baked to perfection.',
         'ingredients': ['Lasagna Sheets', 'Meat Sauce', 'Cheese', 'Herbs'],
         'discounts': None,
-        'image_url': 'https://example.com/lasagna.jpg',
+        'image_url': 'https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -154,7 +154,7 @@ menu = [
         'description': 'Delicious ramen noodles with savory broth and toppings.',
         'ingredients': ['Ramen Noodles', 'Broth', 'Egg', 'Pork'],
         'discounts': '10% off for a limited time',
-        'image_url': 'https://example.com/ramen.jpg',
+        'image_url': 'https://images.pexels.com/photos/16716140/pexels-photo-16716140/free-photo-of-shashlik-with-tomatoes-cheese-and-sausage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -167,7 +167,7 @@ menu = [
         'description': 'Creamy and rich cheesecake with a crumbly crust.',
         'ingredients': ['Cream Cheese', 'Sugar', 'Graham Cracker Crust'],
         'discounts': None,
-        'image_url': 'https://example.com/cheesecake.jpg',
+        'image_url': 'https://images.pexels.com/photos/7190367/pexels-photo-7190367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -180,7 +180,7 @@ menu = [
         'description': 'Refreshing salad with fresh garden vegetables.',
         'ingredients': ['Lettuce', 'Cucumbers', 'Tomatoes', 'Dressing'],
         'discounts': None,
-        'image_url': 'https://example.com/garden_salad.jpg',
+        'image_url': 'https://images.pexels.com/photos/772508/pexels-photo-772508.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     },
     {
@@ -193,7 +193,7 @@ menu = [
         'description': 'Crispy and flavorful chicken wings with various sauces.',
         'ingredients': ['Chicken Wings', 'Seasonings', 'Sauces'],
         'discounts': 'Buy one, get one free on Mondays',
-        'image_url': 'https://example.com/chicken_wings.jpg',
+        'image_url': 'https://images.pexels.com/photos/10361459/pexels-photo-10361459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         'reviews': []
     }
     # Add more dishes as needed
