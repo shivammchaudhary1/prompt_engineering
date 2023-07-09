@@ -23,12 +23,13 @@ const Navbar = () => {
           color="#368ce7"
           fontSize="20px"
         >
-          <Link as={RouterLink} to="/dashboard">
-            DASHBOARD
-          </Link>
           <Link as={RouterLink} to="/menu">
             MENU
           </Link>
+          <Link as={RouterLink} to="/dashboard">
+            DASHBOARD
+          </Link>
+
           <Link as={RouterLink} to="/order-status">
             ORDER STATUS
           </Link>

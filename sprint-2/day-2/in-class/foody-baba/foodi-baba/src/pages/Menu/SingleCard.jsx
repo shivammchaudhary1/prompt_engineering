@@ -172,6 +172,7 @@ import {
   AlertDialogFooter,
 } from "@chakra-ui/react";
 import axios from "axios";
+import Update from "./Update";
 
 const SingleCard = ({
   dish_id,
@@ -295,7 +296,8 @@ const SingleCard = ({
           </Text>
 
           <HStack gap={12} p={3}>
-            <Button>Update</Button>
+            <Update dish_id={dish_id} />
+            {/* <Button>Update</Button> */}
             <Button onClick={() => setIsOpen(true)}>Delete</Button>
           </HStack>
         </Stack>
