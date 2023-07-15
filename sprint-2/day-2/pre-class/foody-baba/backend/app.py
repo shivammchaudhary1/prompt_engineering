@@ -26,6 +26,9 @@ def get_dishes():
 
 
 
+
+
+
 @app.route('/api/dishes', methods=['POST'])
 def create_dish():
     new_dish = request.json
@@ -33,15 +36,6 @@ def create_dish():
     menu.append(new_dish)  # Use the append() method to add the new dish to the menu list
     save_menu()
     return jsonify(new_dish), 201
-
-
-# @app.route('/api/dishes', methods=['POST'])
-# def create_dish():
-#     new_dish = request.json
-#     dish_id = new_dish.get('dish_id')
-#     menu.append(new_dish)  # Use the append() method to add the new dish to the menu list
-#     save_menu()
-#     return jsonify(new_dish), 201
 
 
 
