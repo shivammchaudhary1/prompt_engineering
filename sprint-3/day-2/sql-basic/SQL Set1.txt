@@ -1,0 +1,146 @@
+CREATE DATABASE setAssignmnet1;
+USE setAssignmnet1
+SHOW DATABASES
+Problem1:
+mysql> CREATE TABLE Customers (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     name VARCHAR(255),
+    ->     email VARCHAR(255),
+    ->     address VARCHAR(255),
+    ->     phone_number VARCHAR(20)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+Problem 2:
+ INSERT INTO Customers (name, email, address, phone_number)
+    -> VALUES
+    ->     ('John Doe', 'john@example.com', '123 Main St', '555-1234'),
+    ->     ('Jane Smith', 'jane@example.com', '456 Oak Ave', '555-5678'),
+    ->     ('Alice Johnson', 'alice@example.com', '789 Elm St', '555-9012'),
+
+    ->     ('Bob Williams', 'bob@example.com', '321 Pine Ave', '555-3456'),
+    ->     ('Emily Davis', 'emily@example.com', '654 Birch Ln', '555-7890');
+
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Problem3:
+SELECT * FROM Customers;
++----+---------------+-------------------+--------------+--------------+
+| id | name          | email             | address      | phone_number |
++----+---------------+-------------------+--------------+--------------+
+|  1 | John Doe      | john@example.com  | 123 Main St  | 555-1234     |
+|  2 | Jane Smith    | jane@example.com  | 456 Oak Ave  | 555-5678     |
+|  3 | Alice Johnson | alice@example.com | 789 Elm St   | 555-9012     |
+|  4 | Bob Williams  | bob@example.com   | 321 Pine Ave | 555-3456     |
+|  5 | Emily Davis   | emily@example.com | 654 Birch Ln | 555-7890     |
++----+---------------+-------------------+--------------+--------------+
+5 rows in set (0.00 sec)
+
+
+Problem4:
+ SELECT name, email FROM Customers;
++---------------+-------------------+
+| name          | email             |
++---------------+-------------------+
+| John Doe      | john@example.com  |
+| Jane Smith    | jane@example.com  |
+| Alice Johnson | alice@example.com |
+| Bob Williams  | bob@example.com   |
+| Emily Davis   | emily@example.com |
++---------------+-------------------+
+5 rows in set (0.00 sec)
+
+Problm5:
+SELECT * FROM Customers WHERE id = 3;
++----+---------------+-------------------+------------+--------------+
+| id | name          | email             | address    | phone_number |
++----+---------------+-------------------+------------+--------------+
+|  3 | Alice Johnson | alice@example.com | 789 Elm St | 555-9012     |
++----+---------------+-------------------+------------+--------------+
+1 row in set (0.00 sec)
+
+P6:
+SELECT * FROM Customers WHERE name LIKE 'A%';
++----+---------------+-------------------+------------+--------------+
+| id | name          | email             | address    | phone_number |
++----+---------------+-------------------+------------+--------------+
+|  3 | Alice Johnson | alice@example.com | 789 Elm St | 555-9012     |
++----+---------------+-------------------+------------+--------------+
+1 row in set (0.00 sec)
+
+P7
+ SELECT * FROM Customers ORDER BY name DESC;
++----+---------------+-------------------+--------------+--------------+
+| id | name          | email             | address      | phone_number |
++----+---------------+-------------------+--------------+--------------+
+|  1 | John Doe      | john@example.com  | 123 Main St  | 555-1234     |
+|  2 | Jane Smith    | jane@example.com  | 456 Oak Ave  | 555-5678     |
+|  5 | Emily Davis   | emily@example.com | 654 Birch Ln | 555-7890     |
+|  4 | Bob Williams  | bob@example.com   | 321 Pine Ave | 555-3456     |
+|  3 | Alice Johnson | alice@example.com | 789 Elm St   | 555-9012     |
++----+---------------+-------------------+--------------+--------------+
+5 rows in set (0.00 sec)
+
+P8:
+ UPDATE Customers SET address = 'New Address' WHERE id = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+P9
+SELECT * FROM Customers ORDER BY id ASC LIMIT 3;
++----+---------------+-------------------+-------------+--------------+
+| id | name          | email             | address     | phone_number |
++----+---------------+-------------------+-------------+--------------+
+|  1 | John Doe      | john@example.com  | 123 Main St | 555-1234     |
+|  2 | Jane Smith    | jane@example.com  | 456 Oak Ave | 555-5678     |
+|  3 | Alice Johnson | alice@example.com | 789 Elm St  | 555-9012     |
++----+---------------+-------------------+-------------+--------------+
+3 rows in set (0.00 sec)
+
+P10
+ DELETE FROM Customers WHERE id = 2;
+Query OK, 1 row affected (0.00 sec)
+
+P11
+SELECT COUNT(*) FROM Customers;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.02 sec)
+
+P12
+SELECT * FROM Customers ORDER BY id ASC LIMIT 2, 18446744073709551615;
++----+--------------+-------------------+--------------+--------------+
+| id | name         | email             | address      | phone_number |
++----+--------------+-------------------+--------------+--------------+
+|  4 | Bob Williams | bob@example.com   | New Address  | 555-3456     |
+|  5 | Emily Davis  | emily@example.com | 654 Birch Ln | 555-7890     |
++----+--------------+-------------------+--------------+--------------+
+2 rows in set (0.00 sec)
+
+P13:
+ SELECT * FROM Customers WHERE id > 2 AND name LIKE 'B%';
++----+--------------+-----------------+-------------+--------------+
+| id | name         | email           | address     | phone_number |
++----+--------------+-----------------+-------------+--------------+
+|  4 | Bob Williams | bob@example.com | New Address | 555-3456     |
++----+--------------+-----------------+-------------+--------------+
+1 row in set (0.00 sec)
+
+P14:
+SELECT * FROM Customers WHERE id < 3 OR name LIKE '%s';
++----+--------------+-------------------+--------------+--------------+
+| id | name         | email             | address      | phone_number |
++----+--------------+-------------------+--------------+--------------+
+|  1 | John Doe     | john@example.com  | 123 Main St  | 555-1234     |
+|  4 | Bob Williams | bob@example.com   | New Address  | 555-3456     |
+|  5 | Emily Davis  | emily@example.com | 654 Birch Ln | 555-7890     |
++----+--------------+-------------------+--------------+--------------+
+3 rows in set (0.00 sec)
+
+P15:
+ SELECT * FROM Customers WHERE phone_number IS NULL OR phone_number = '';
+Empty set (0.00 sec)

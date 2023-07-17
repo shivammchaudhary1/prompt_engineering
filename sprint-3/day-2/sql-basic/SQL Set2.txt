@@ -1,0 +1,109 @@
+
+P16:
+
+CREATE TABLE Restaurants (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    cuisine_type VARCHAR(100),
+    location VARCHAR(255),
+    average_rating DECIMAL(3,2),
+    delivery_available BOOLEAN
+);
+
+P17:
+db.Restaurants.insertMany([
+    { id: 1, name: 'Restaurant A', cuisine_type: 'Italian', location: 'New York', average_rating: 4.5, delivery_available: true },
+    { id: 2, name: 'Restaurant B', cuisine_type: 'Mexican', location: 'Los Angeles', average_rating: 4.2, delivery_available: false },
+    { id: 3, name: 'Restaurant C', cuisine_type: 'Chinese', location: 'San Francisco', average_rating: 3.8, delivery_available: true },
+    { id: 4, name: 'Restaurant D', cuisine_type: 'Indian', location: 'Chicago', average_rating: 4.7, delivery_available: true },
+    { id: 5, name: 'Restaurant E', cuisine_type: 'Japanese', location: 'Tokyo', average_rating: 4.9, delivery_available: true }
+]);
+
+P18:
+SELECT * FROM Restaurants ORDER BY average_rating DESC;
++----+--------------+--------------+---------------+----------------+--------------------+
+| id | name         | cuisine_type | location      | average_rating | delivery_available |
++----+--------------+--------------+---------------+----------------+--------------------+
+|  5 | Restaurant E | Japanese     | Tokyo         |           4.90 |                  1 |
+|  4 | Restaurant D | Indian       | Chicago       |           4.70 |                  1 |
+|  1 | Restaurant A | Italian      | New York      |           4.50 |                  1 |
+|  2 | Restaurant B | Mexican      | Los Angeles   |           4.20 |                  0 |
+|  3 | Restaurant C | Chinese      | San Francisco |           3.80 |                  1 |
++----+--------------+--------------+---------------+----------------+--------------------+
+5 rows in set (0.00 sec)
+
+P19:
+ SELECT * FROM Restaurants WHERE delivery_available = TRUE AND average_rating > 4;
++----+--------------+--------------+----------+----------------+--------------------+
+| id | name         | cuisine_type | location | average_rating | delivery_available |
++----+--------------+--------------+----------+----------------+--------------------+
+|  1 | Restaurant A | Italian      | New York |           4.50 |
+      1 |
+|  4 | Restaurant D | Indian       | Chicago  |           4.70 |
+      1 |
+|  5 | Restaurant E | Japanese     | Tokyo    |           4.90 |
+      1 |
++----+--------------+--------------+----------+----------------+--------------------+
+
+P20:
+ SELECT * FROM Restaurants WHERE cuisine_type IS NULL OR cuisine_type = '';
+Empty set (0.00 sec)
+
+P21:
+SELECT COUNT(*) FROM Restaurants WHERE delivery_available = TRUE;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.01 sec)
+
+P22:
+ SELECT * FROM Restaurants WHERE location LIKE '%New York%';
++----+--------------+--------------+----------+----------------+--------------------+
+| id | name         | cuisine_type | location | average_rating | delivery_available |
++----+--------------+--------------+----------+----------------+--------------------+
+|  1 | Restaurant A | Italian      | New York |           4.50 |
+      1 |
++----+--------------+--------------+----------+----------------+--------------------+
+1 row in set (0.00 sec)
+
+P23:
+SELECT AVG(average_rating) FROM Restaurants;
++---------------------+
+| AVG(average_rating) |
++---------------------+
+|            4.420000 |
++---------------------+
+1 row in set (0.00 sec)
+
+P24:
+SELECT * FROM Restaurants ORDER BY average_rating DESC LIMIT 5;
++----+--------------+--------------+---------------+----------------+--------------------+
+| id | name         | cuisine_type | location      | average_rating | delivery_available |
++----+--------------+--------------+---------------+----------------+--------------------+
+|  5 | Restaurant E | Japanese     | Tokyo         |           4.90 |                  1 |
+|  4 | Restaurant D | Indian       | Chicago       |           4.70 |
+           1 |
+|  1 | Restaurant A | Italian      | New York      |           4.50 |                  1 |
+|  2 | Restaurant B | Mexican      | Los Angeles   |           4.20 |                  0 |
+|  3 | Restaurant C | Chinese      | San Francisco |           3.80 |                  1 |
++----+--------------+--------------+---------------+----------------+--------------------+
+5 rows in set (0.00 sec)
+
+P25:
+DELETE FROM Restaurants WHERE id = 3;
+Query OK, 1 row affected (0.01 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+

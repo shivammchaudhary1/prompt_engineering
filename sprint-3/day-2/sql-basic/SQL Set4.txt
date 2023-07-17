@@ -1,0 +1,65 @@
+P36:
+ SELECT * FROM Rides WHERE fare = (SELECT MAX(fare) FROM Rides) OR fare = (SELECT MIN(fare) FROM Rides);
++----+-----------+--------------+----------------+--------------+----------+-----------+-------+
+| id | driver_id | passenger_id | start_location | end_location | distance | ride_time | fare  |
++----+-----------+--------------+----------------+--------------+----------+-----------+-------+
+|  1 |         1 |            2 | Location A     | Location B   |     5.20 |     15.50 | 12.50 |
+|  3 |         2 |            1 | Location E     | Location F   |     8.10 |     20.80 | 15.80 |
++----+-----------+--------------+----------------+--------------+----------+-----------+-------+
+2 rows in set (0.01 sec)
+P37:
+
+SELECT driver_id, AVG(fare) AS average_fare, AVG(distance) AS average_distance FROM Rides GROUP BY driver_id;
++-----------+--------------+------------------+
+| driver_id | average_fare | average_distance |
++-----------+--------------+------------------+
+|         1 |    12.850000 |         5.750000 |
+|         2 |    15.800000 |         8.100000 |
+|         4 |    15.000000 |         2.500000 |
++-----------+--------------+------------------+
+3 rows in set (0.01 sec)
+
+P37:
+SELECT driver_id, COUNT(*) AS ride_count FROM Rides GROUP BY driver_id HAVING COUNT(*) > 5;
+Empty set (0.00 sec)
+
+P38:
+SELECT d.name
+FROM Drivers d
+JOIN Rides r ON d.driver_id = r.driver_id
+WHERE r.fare = (SELECT MAX(fare) FROM R
+ides);
+
+
+P39:SELECT driver_id, SUM(fare) AS total_earnings
+FROM Rides
+GROUP BY driver_id
+ORDER BY total_earnings DESC
+LIMIT 3;
+
+P40:
+SELECT * FROM Rides WHERE ride_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);
+
+P42:
+ SELECT * FROM Rides WHERE end_location IS NULL;
+Empty set (0.00 sec)
+
+P43:
+ SELECT id, fare / distance AS fare_per_mile
+    -> FROM Rides
+    -> ORDER BY fare_per_mile DESC;
++----+---------------+
+| id | fare_per_mile |
++----+---------------+
+|  4 |      6.000000 |
+|  1 |      2.403846 |
+|  5 |      2.095238 |
+|  3 |      1.950617 |
++----+---------------+
+4 rows in set (0.00 sec)
+
+P44:
+SELECT r.id, d.name AS driver_name, p.name AS passenger_name
+FROM Rides r
+JOIN Drivers d ON r.driver_id = d.driver_id
+JOIN Passengers p ON r.passenger_id = p.passenger_id;
